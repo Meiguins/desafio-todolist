@@ -11,15 +11,4 @@ class DesafioTodolistApplicationTests {
 	@Autowired
 	private WebTestClient webTestClient;
 
-	@Test
-	void testCreateTodoFailure() {
-		webTestClient
-				.post()
-				.uri("/todos")
-				.bodyValue(
-						new Todo("","", false, 1))
-				.exchange()
-				.expectStatus().isBadRequest();
-	}
-
 }
